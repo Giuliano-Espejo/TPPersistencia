@@ -24,9 +24,9 @@ public class PracticoPersistenciaEnJpaApplication {
 	@Autowired
 	ClienteRepository clienteRepository;
 	@Autowired
-	DomicilioRepository domicilioRepository;
-	@Autowired
 	FacturaRepository facturaRepository;
+	@Autowired
+	DomicilioRepository domicilioRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(PracticoPersistenciaEnJpaApplication.class, args);
