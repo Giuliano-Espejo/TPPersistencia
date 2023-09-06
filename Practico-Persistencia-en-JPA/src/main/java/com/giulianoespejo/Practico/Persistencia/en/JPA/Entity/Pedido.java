@@ -42,5 +42,36 @@ public class Pedido extends BaseEntidad{
         detallePedidos.add(detallePedido);
     }
 
+    public void mostarDetalles(){
+        System.out.println("Detalles del pedido");
+        System.out.println("---------------------------");
+        for (DetallePedido d: detallePedidos) {
+            System.out.println("\t Foto producto: " +d.getProducto().getFoto());
+            System.out.println("\t Cantidad: " + d.getCantidad());
+            System.out.println("\t Subtotal: " + d.getSubtotal());
+            System.out.println("---------------------------");
+        }
+    }
+
+    public void mostarFactura(){
+        System.out.println("Factura: ");
+        System.out.println("---------------------------");
+        System.out.println("\t Fecha: " + factura.getFecha());
+        System.out.println("\t Descuento: " + factura.getDescuento());
+        System.out.println("\t Total: " + factura.getTotal());
+        System.out.println("\t Numero: " + factura.getNumero());
+        System.out.println("\t Forma de pago: " + factura.getFormaPago().toString().toLowerCase());
+        System.out.println("---------------------------");
+    }
+
+    public void mostrarPedido(){
+        System.out.println("Fecha: " + fecha);
+        System.out.println("Estado " + estado.toString().toLowerCase());
+        System.out.println("Hora estimada de entrega " + horaEstimadaEntrega);
+        System.out.println("Tipo de envio " + tipoEnvio.toString().toLowerCase());
+        System.out.println("Total: " + total);
+        mostarFactura();
+        mostarDetalles();
+    }
 
 }

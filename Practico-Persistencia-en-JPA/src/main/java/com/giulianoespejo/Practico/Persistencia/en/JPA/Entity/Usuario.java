@@ -30,5 +30,25 @@ public class Usuario extends BaseEntidad{
         pedidos.add(pedido);
     }
 
+    public void mostrarPedido(){
+        System.out.println("Pedidos del usuario: ");
+        System.out.println("---------------------------");
+        for (Pedido p : pedidos){
+            System.out.println("\t Fecha: " + p.getFecha());
+            System.out.println("\t Estado: "+ p.getEstado().toString().toLowerCase());
+            System.out.println("\t Total: " + p.getTotal());
+            System.out.println("\t Hora estima de entrega: " + p.getHoraEstimadaEntrega());
+            System.out.println("\t Tipo de envio: " + p.getTipoEnvio().toString().toLowerCase());
+            System.out.println("---------------------------");
+        }
+    }
 
+    public void mostrarUser(){
+        System.out.println("---------------------------");
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Password: " + password);
+        System.out.println("Rol: " + rol);
+        System.out.println("---------------------------");
+        mostrarPedido();
+    }
 }
